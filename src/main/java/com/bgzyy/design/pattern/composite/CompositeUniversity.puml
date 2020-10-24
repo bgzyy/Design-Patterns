@@ -1,0 +1,30 @@
+@startuml
+
+class OrganizationComponent {
+    + add(): void
+    + delete(): void
+    + print(): void
+}
+
+class Department
+class College {
+    - department: Department
+}
+
+note "Department\College\University \n 都继承于 OrganizationComponent \n所以 University & College 需要聚\n合的对象都可以通过 \n OrganizationComponent 聚合，\n在这里使用具体的类是为了标识" as NOTE
+
+College .. NOTE
+University .. NOTE
+
+class University {
+    - college: College
+}
+
+Department --|> OrganizationComponent
+College --|> OrganizationComponent
+University --|> OrganizationComponent
+
+College -left--o University
+Department -left--o College
+
+@enduml

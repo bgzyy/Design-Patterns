@@ -1,0 +1,43 @@
+@startuml
+
+abstract class Drink {
+    - description: String
+    - price: Double
+    + getDescription(): String
+    + cost(): Double
+}
+
+class Coffee
+class ShortBlack {
+    + cost(): Double
+}
+class Decaf {
+    + cost(): Double
+}
+
+Class Decorator {
+    - drink: Drink
+    + getDescription(): String
+    + cost(): Double
+}
+
+class Milk {
+    + getDescription(): String
+    + cost(): Double
+}
+class Soy {
+    + getDescription(): String
+    + cost(): Double
+}
+
+Coffee --|> Drink
+ShortBlack --|> Coffee
+Decaf --|> Coffee
+
+Decorator <|-- Milk
+Decorator <|-- Soy
+
+Decorator --|> Drink
+Drink --o Decorator
+
+@enduml

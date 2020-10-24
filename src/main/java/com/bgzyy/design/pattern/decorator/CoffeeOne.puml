@@ -1,0 +1,25 @@
+@startuml
+
+abstract class Drink {
+    - description: String
+    + getDescription(): String
+    + cost(): Double
+}
+
+class Decaf {
+    + cost(): Double
+}
+
+class DecafMilk {
+    + cost(): Double
+}
+
+class DecafMilkSoy {
+    + cost(): Double
+}
+
+Decaf --|> Drink
+DecafMilk --|> Drink
+DecafMilkSoy --|> Drink
+
+@enduml

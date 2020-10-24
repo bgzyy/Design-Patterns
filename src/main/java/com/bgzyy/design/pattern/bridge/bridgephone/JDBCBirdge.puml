@@ -1,0 +1,20 @@
+@startuml
+
+interface java.sql.Connection
+interface com.mysql.jdbc.Connection
+interface MySQLConnection
+class ConnectionImpl
+
+class DriverManager
+note top: 充当了桥接模式的\n抽象层，只不过 JDBC \n中直接实现了对应的方法
+
+class Client
+
+com.mysql.jdbc.Connection --|> java.sql.Connection
+MySQLConnection --|> com.mysql.jdbc.Connection
+ConnectionImpl --|> MySQLConnection
+
+DriverManager -right..> java.sql.Connection
+Client -right..> DriverManager
+
+@enduml

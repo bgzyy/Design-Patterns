@@ -1,0 +1,40 @@
+@startuml
+
+class DVD {
+    + on(): void
+    + off(): void
+    + pause(): void
+}
+
+class Screen {
+    + on(): void
+    + off(): void
+}
+
+class Light {
+    + on(): void
+    + off(): void
+}
+
+class FacadeTheater {
+    - dvd: DVD
+    - screen: Screen
+    - light: Light
+
+    + ready(): void
+    + on(): void
+    + pause(): void
+    + off(): void
+}
+
+note left: 客户端通过外\n观类去统一操\n作对应的子系统
+
+class Client
+
+FacadeTheater o-- DVD
+FacadeTheater o-- Screen
+FacadeTheater o-- Light
+
+Client -left--> FacadeTheater
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+
+interface Prototype {
+    +clone(): void
+}
+note left: 原型类，声明一个\n克隆自己的接口
+
+class Client
+class ConcretePrototype1
+class ConcretePrototype2
+
+ConcretePrototype1 ..|> Prototype
+ConcretePrototype2 ..|> Prototype
+
+Client -left..> Prototype
+
+@enduml

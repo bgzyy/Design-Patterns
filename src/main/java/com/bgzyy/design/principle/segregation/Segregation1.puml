@@ -1,0 +1,40 @@
+@startuml
+
+interface interface1{
+    void method1()
+    void method2()
+    void method3()
+    void method4()
+    void method5()
+}
+
+together {
+    class A {
+        void method1()
+        void method2()
+        void method3()
+    }
+
+    class D {
+        void method1()
+        void method4()
+        void method5()
+    }
+}
+
+together {
+    class B
+    class C
+}
+
+A -up[hidden]- D
+C -up[hidden]- B
+
+' --|> 实现于接口
+B -left--|> interface1
+C -left--|> interface1
+
+' -> 依赖于接口
+A -left-> interface1
+D -left-> interface1
+@enduml

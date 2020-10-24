@@ -1,0 +1,16 @@
+@startuml
+
+abstract class AbstractBuildHouse {
+    {abstract} +buildBasic(): void
+    {abstract} +buildWall(): void
+    {abstract} +buildRoof(): void
+    +build(): void
+}
+
+class CommonHouse
+class HighBuilding
+
+CommonHouse --|> AbstractBuildHouse
+HighBuilding --|> AbstractBuildHouse
+
+@enduml

@@ -1,0 +1,56 @@
+@startuml
+
+together {
+    interface interface1 {
+        void method1()
+    }
+
+    interface interface2 {
+        void method2()
+        void method3()
+    }
+
+    interface interface3 {
+        void method4()
+        void method5()
+    }
+}
+
+together {
+    class A {
+        void method1()
+        void method2()
+        void method3()
+    }
+
+    class D {
+        void method1()
+        void method4()
+        void method5()
+    }
+}
+
+together {
+    class B
+    class C
+}
+
+interface2 -up[hidden]- interface1
+interface3 -up[hidden]- interface2
+
+A -up[hidden]- D
+C -up[hidden]- B
+
+A -right-> interface1
+A -right-> interface2
+
+D -right-> interface1
+D -right-> interface3
+
+B -left--|> interface1
+B -left--|> interface2
+
+C -left--|> interface1
+C -left-|> interface3
+
+@enduml

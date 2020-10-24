@@ -1,0 +1,27 @@
+@startuml
+
+class Product
+class Director {
+    -builder: Builder
+    +construct(): Direct
+}
+
+abstract class Builder {
+    {abstract}+ buildPartA(): void
+    {abstract}+ buildPartB(): void
+    {abstract}+ buildPartC(): void
+    {abstract}+getResult(): Product
+}
+
+class ConcreteBuilder {
+    + buildPartA(): void
+    + buildPartB(): void
+    + buildPartC(): void
+    +getResult(): Product
+}
+
+ConcreteBuilder --|> Builder
+Product -left--* Builder
+Builder --o Director
+
+@enduml

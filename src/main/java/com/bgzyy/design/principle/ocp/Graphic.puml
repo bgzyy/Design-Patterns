@@ -1,0 +1,21 @@
+@startuml
+
+class Shape
+class Rectangle
+class Circle
+class GraphicEditor {
+    +drawRectangle()
+    +drawCircle()
+}
+note left: if (type == 1) {\n drawRectangle()\n} else if (type == 2) {\n drawCircle()\n}
+
+GraphicEditor --> Shape
+GraphicEditor --> Circle
+GraphicEditor --> Rectangle
+
+Rectangle -left[hidden] Shape
+Circle -[hidden] Shape
+
+Rectangle --|> Shape
+Circle --|> Shape
+@enduml

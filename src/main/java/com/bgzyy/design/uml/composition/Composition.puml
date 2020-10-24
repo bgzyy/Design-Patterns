@@ -1,0 +1,16 @@
+@startuml
+
+class IDCard
+class Head
+
+class Person {
+    -idCard: IDCard
+    -head: Head = new Head()
+    --
+    +setIdCard(IdCard idCard): void
+}
+
+IDCard "1" --o Person
+Head "1" --* Person
+
+@enduml

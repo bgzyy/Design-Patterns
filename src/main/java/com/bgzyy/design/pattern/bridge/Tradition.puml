@@ -1,0 +1,23 @@
+@startuml
+
+class Phone
+
+class Folded
+class UpRight
+
+class HuaWei1
+class Vivo1
+
+class HuaWei2
+class Vivo2
+
+Folded --|> Phone
+UpRight --|> Phone
+
+HuaWei1 --|> Folded
+Vivo1 --|> Folded
+
+HuaWei2 --|> UpRight
+Vivo2 --|> UpRight
+
+@enduml

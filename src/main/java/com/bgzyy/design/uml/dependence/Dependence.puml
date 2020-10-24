@@ -1,0 +1,20 @@
+@startuml
+
+class PersonDao
+class IDCard
+class Person
+class Department
+
+class PersonServiceBean {
+    -personDao: PersonDao
+    +save(Person person): void
+    +getIDCard(Integer personId): IDCard
+    +modify(): void
+}
+note left : public void modify() {\n\tDepartment department = new Department();\n}
+
+PersonServiceBean ..> PersonDao
+PersonServiceBean ..> IDCard
+PersonServiceBean ..> Person
+PersonServiceBean ..> Department
+@enduml

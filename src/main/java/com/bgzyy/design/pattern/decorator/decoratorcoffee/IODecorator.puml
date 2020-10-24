@@ -1,0 +1,27 @@
+@startuml
+
+abstract class InputStream
+
+class FileInputStream
+class StringBufferInputStream
+class ByteArrayInputStream
+
+class FilterInputStream {
+    # in: InputStream
+}
+note left: 装饰者 Decorator,\n 里面包含了被装 \n 饰者 InputStream
+
+class BufferInputStream
+class DataInputStream
+class LineNumberInputStream
+
+FileInputStream --|> InputStream
+StringBufferInputStream --|> InputStream
+ByteArrayInputStream --|> InputStream
+InputStream <|-- FilterInputStream
+
+FilterInputStream <|-- BufferInputStream
+FilterInputStream <|-- DataInputStream
+FilterInputStream <|-- LineNumberInputStream
+
+@enduml
