@@ -1,0 +1,13 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/.gitignore
+.idea/Design-Patterns.iml
+.idea/checkstyle-idea.xml
+.idea/compiler.xml
+.idea/dictionaries/
+.idea/encodings.xml
+.idea/misc.xml
+.idea/sonarlint/
+.idea/uiDesigner.xml
+Design-Patterns.iml
+src/
+target/
